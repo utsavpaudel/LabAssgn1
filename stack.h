@@ -7,8 +7,9 @@ class Stack{
     ~Stack();
     void push(int element);
     int pop();
-    int peak();
+    int peek();
     bool isEmpty();
+    bool isFull();
    
     private:
     int elements[MAX_STACK_SIZE];

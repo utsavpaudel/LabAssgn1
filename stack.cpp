@@ -6,13 +6,24 @@ Stack::Stack()
     top = -1;
 }
 
+bool Stack::isEmpty(){
+    return top<0;
+}
 
+bool Stack::isFull(){
+    return top>=MAX_STACK_SIZE-1;
+}
+
+int Stack:: peek(){
+    if(!isEmpty())
+    return elements[top];
+}
 
 void Stack:: push(int element)
 {
-    if (top >= MAX_STACK_SIZE -1 )
+    if (isFull())
     {
-        cout << "Cannot push"<<element <<".Stack is full.";
+        cout << "Cannot push "<<element <<".Stack is full.";
     }
     else{
         top++;
@@ -35,17 +46,17 @@ void Stack:: push(int element)
       }
  }
 
-Stack::~Stack(){
-
-}
+Stack::~Stack(){}
 
 
 int main(){
     Stack s;
     s.push(50);
     s.push(70);
-    cout<< s.pop() <<endl;
-    cout<< s.pop() <<endl;
+    // cout<<s.isEmpty();
+        cout<<s.peek()<<endl;
+        cout<< s.pop() <<endl;
+        cout<< s.pop() <<endl;
 }
 
 
