@@ -32,6 +32,12 @@ int Queue::dequeue(){
         return data[front];
     }
 }
+int Queue :: frontPrint(){
+    return data[front];
+}
+int Queue :: rearPrint(){
+    return data[rear];
+}
 
 Queue::~Queue(){}
 
@@ -44,6 +50,6 @@ int main(){
     // cout << q.isFull()<<endl;
     cout << q.dequeue()<<endl;
     cout << q.dequeue()<<endl;
-   
+    //cout << q.frontPrint();
 
 }
